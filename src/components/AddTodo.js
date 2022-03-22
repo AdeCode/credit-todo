@@ -9,17 +9,9 @@ export default function AddTodo({ onSubmit, onChange, title }) {
         <div>
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
-                    <span style={{ marginRight:'15px' }}>
-                        {/* <input 
-                        type="checkbox"                        
-                        /> */}
-
-                        {/* <Checkbox                            
-                            icon={<CheckCircleOutlineIcon />}                        
-                        /> */}
+                    <span style={{ marginRight:'15px' }}>                        
                         <RadioButtonUncheckedIcon
                             icon={<CheckCircleOutlineIcon />}
-                            checkedIcon={<CheckCircleIcon />}
                             style={{ marginLeft:'10px'}}
                             className='circle'
                         />
