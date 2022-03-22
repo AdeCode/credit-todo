@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react'
 import AddTodo from './AddTodo'
 import Todos from './Todos'
 import Card from './Card'
+import List from './Data'
 
 export default function TodoList() {
     const [title, setTitle] = useState('')
-    const [todos, setTodos] = useState(Todos)
+    const [todos, setTodos] = useState(List.getList())
+    const [itemsLeft, setItemsLeft] = useState(1)
+
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -14,8 +17,10 @@ export default function TodoList() {
             title: title,
             active: 'true'
         }
+        // let newTodos = [...todos, todo]
         setTodos([...todos, todo])
         setTitle('')
+        List.saveList(todos)
     }
 
     const onChange = (e) => {
@@ -24,16 +29,27 @@ export default function TodoList() {
         console.log(title)
     }
 
+    const getItemsLeft = () => {
+        const active = todos.filter(todo => todo.active === true)
+        setItemsLeft(active.length)
+    }
+
+    useEffect(() => {
+        getItemsLeft()
+    }, [todos, setTodos])
+    
     const deleteTask = (id) => {
         const newTodos = todos.filter(
             todo => todo.id !== id
         )
         setTodos(newTodos)
+        List.saveList(todos)
     }
 
     const toggleComplete = (id) => {
         const newTodos = todos.map((todo) => todo.id === id ? { ...todo, active: !todo.active } : todo)
         setTodos(newTodos)
+        List.saveList(todos)
     }
 
     const getAll = () => {
@@ -41,7 +57,7 @@ export default function TodoList() {
     }
 
     const getCompleted = () => {
-        const completed = todos.filter(todo => todo.active === false)
+        const completed = todos.filter(todo => todo.active === false)        
         setTodos(completed)
     }
 
@@ -52,6 +68,7 @@ export default function TodoList() {
     const getActive = () => {
         const active = todos.filter(todo => todo.active === true)
         setTodos(active)
+        setItemsLeft(active.length)
     }
 
     return (
@@ -62,7 +79,7 @@ export default function TodoList() {
                 title={title}
             />
 
-            <div>
+            <div className='card-container'>
                 {todos.map((todo) => {
                     return (
                         <Card
@@ -75,18 +92,20 @@ export default function TodoList() {
                     )
                 }
                 )}
-
-                <div className='footer-menu'>
-                    <h5 className='item'>{todos.length} items left</h5>
-                    <div className='mid-item'>
-                        <h5 className='item' onClick={getAll} style={{ cursor:'pointer' }}>All</h5>
-                        <h5 className='item' onClick={getActive} style={{ cursor:'pointer' }}>Active</h5>
-                        <h5 className='item' onClick={getCompleted} style={{ cursor:'pointer' }}>Completed</h5>
-                    </div>
-                    <h5 className='item' onClick={clearCompleted} style={{ cursor:'pointer' }}>Clear completed</h5>
+                <div className='card'>
+                    <h5 className='item'>{itemsLeft} items left</h5>
+                    <h5 className='item' onClick={clearCompleted} style={{ cursor: 'pointer' }}>Clear completed</h5>            
                 </div>
             </div>
-
+            <div className='footer-menu'>
+                <h5 className='item item-left'>{itemsLeft} items left</h5>
+                <div className='mid-item'>
+                    <h5 className='item' onClick={getAll} style={{ cursor: 'pointer' }}>All</h5>
+                    <h5 className='item' onClick={getActive} style={{ cursor: 'pointer' }}>Active</h5>
+                    <h5 className='item' onClick={getCompleted} style={{ cursor: 'pointer' }}>Completed</h5>
+                </div>
+                <h5 className='item item-right' onClick={clearCompleted} style={{ cursor: 'pointer' }}>Clear completed</h5>
+            </div>
         </div>
     )
 }

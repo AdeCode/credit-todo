@@ -4,31 +4,40 @@
     --theme-text: hsl(236, 33%, 92%);
     --theme-page-text: #111;
     --theme-new-bg: hsl(236, 9%, 61%);
-    --theme-background-image: url('../images/bg-mobile-light.jpg');
+    --theme-new-bg-light: hsl(236, 9%, 61%, .5);
+    --theme-background-mobile-image: url('../images/bg-mobile-light.jpg');
     --theme-background-desktop-image: url('../images/bg-desktop-light.jpg');
     --theme-content-background: hsl(0, 0%, 98%);
     --theme-card-background: hsl(0, 0%, 98%);
     --color-one:hsl(192, 100%, 67%);
     --color-two:hsl(220, 98%, 61%);
-    --footer-menu-text:hsl(220, 98%, 61%);
+    --footer-menu-text-hover:hsl(220, 98%, 61%);
     --Light-Gray: hsl(233, 11%, 84%);
     --very-light-gray: hsl(236, 9%, 61%);
-    --card-border:hsl(236, 9%, 61%);
+    --card-border:hsl(236, 9%, 61%, .2);
     --completed-task-text:hsl(233, 11%, 84%);
+    --theme-radio-button: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+
 }
 
 .dark {
     --theme-color: #0000A8;
     --theme-page-background: #111;
-    --theme-page-text: hsl(0, 0%, 98%);
+    --theme-page-text: hsl(234, 39%, 85%);
     --theme-new-bg: hsl(233, 14%, 35%);
-    --theme-background-image: url('../images/bg-mobile-dark.jpg');
+    --theme-new-bg-light: hsl(236, 9%, 61%, .5);
+    --theme-background-mobile-image: url('../images/bg-mobile-dark.jpg');
     --theme-background-desktop-image: url('../images/bg-desktop-dark.jpg');
     --theme-content-background: hsl(237, 14%, 26%);
     --theme-card-background: hsl(237, 14%, 26%);
+    --theme-card-color: hsl(234, 39%, 85%);
     --color-one:var(--color-one);
     --color-two:var(--color-two);
-    --footer-menu-text:hsl(220, 98%, 61%);
-    --card-border:hsl(233, 11%, 84%);
-    --completed-task-text:hsla(0, 0%, 93%, 0.884);
+    --footer-menu-text-hover:hsl(220, 98%, 61%);
+    --card-border:hsl(233, 11%, 84%, .1);
+    --completed-task-text:hsla(0, 0%, 93%, .2);
+    --theme-radio-button: hsl(0, 0%, 98%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+
 }

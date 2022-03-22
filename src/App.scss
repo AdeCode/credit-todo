@@ -7,32 +7,27 @@
 .App {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--theme-page-background);
   color: var(--theme-page-text);
   margin: 0;
   padding: 0;
+  background-image: var(--theme-background-desktop-image);
+  background-repeat:no-repeat;
 }
 
 .container{
-  background-image: var(--theme-background-desktop-image);
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  // width: 100vw;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
-.content{
-  // background: var(--theme-content-background);
-  height: 200px;
   width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  //background-image: var(--theme-background-image);
+  // justify-content: center;
+  // align-items: center;
 }
 
 .row{
@@ -44,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background: var(--theme-background-desktop);
+  color: var(--theme-text);
   &-title{
     font-weight: 600;
     font-stretch: expanded;
@@ -53,12 +48,27 @@
   }
 }
 
+.input, .card{
+  height: 7vh;
+  background-color: var(--theme-card-background);
+  // color: var(--theme-card-color);
+}
+
 .input{
   width: 100%;
-  height: 10vh;
+  border: none;  
+  border-radius: 4px;
+  color: var(--theme-card-color);
+  font-size: 18px;
+}
+
+.form-group{
+  display: flex;
+  align-items: center;
   background-color: var(--theme-card-background);
-  border: none;
-  
+  margin: 10px 0;
+  border-radius: 4px;
+  height: 7vh;
 }
 
 .completed{
@@ -70,9 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
-  background-color: var(--theme-card-background);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 0.5px solid var(--card-border);
   color: var(--theme-page-text);
 }
 
@@ -88,22 +96,131 @@ input:focus{
   outline: none;
 }
 
-.form-group{
-  display: flex;
-  align-items: center;
-  background-color: var(--theme-card-background);
-  margin: 10px 0;
-}
+
 
 .footer-menu{
   display: flex;
   justify-content: space-between;
   background-color: var(--theme-card-background);
   padding: 0 10px;
+  color: var(--theme-new-bg);
 }
 
 .mid-item{
   display: flex;
   justify-content: space-between;
   width: 30%;
+
+  .item:hover{
+    color: var(--footer-menu-text-hover);
+  }
+}
+
+.active{
+  background-color: aqua;
+}
+
+.card:first-child{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.radio{
+  color: var(--theme-radio-button);
+}
+
+.circle{
+  color: var(--card-border);
+  // opacity: 0.2;
+}
+
+@media screen and (max-width: 375px) {
+  .header-title{
+    font-size: 20px;
+  }
+
+  .container{
+    width: 90vw;
+    height: 100%;
+  }
+
+  .title{
+    font-size: 0.7rem;
+  }
+
+  .footer-menu{
+    font-size: 0.7rem;
+  }
+
+  .App{
+    background-image: var(--theme-background-mobile-image);
+  }
+
+  .footer-menu{
+    margin-top: 3vh;
+    border-radius: 4px;
+    height: 7vh;
+    align-items: center;
+  }
+
+  .card-container{
+    border-radius: 4px;
+  }
+
+  .card{
+    padding-right: 10px;
+
+    .title{
+      padding-left: 5px;
+    }
+  }
+
+  .card:last-child{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: 0.7rem;
+    padding: 0 5px 0 10px;
+    border-bottom: none;
+  }
+
+  .card:first-child{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .item-left, .item-right{
+    display: none;
+  }
+  .mid-item{
+    width: 100%;
+    justify-content: center;
+
+    .item{
+      margin: 0 5px;
+
+    }
+   
+  }
+}
+
+@media screen and (min-width: 376px){
+  .close{
+    display: none;
+  }
+
+  .card:last-child{
+    display: none;
+  }
+  
+  .item-left, .item-right{
+    color: var(--theme-new-bg-light);
+  }
+  .footer-menu{
+    align-items: center;
+    height: 7vh;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .title{
+    width: 90%;
+  }
 }
