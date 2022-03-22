@@ -18,7 +18,6 @@ export default function TodoList() {
             title: title,
             active: true
         }
-        // let newTodos = [...todos, todo]
         setTodos([...todos, todo])
         setTitle('')
         List.saveList(todos)
