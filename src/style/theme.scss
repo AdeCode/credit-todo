@@ -11,14 +11,15 @@
     --theme-card-background: hsl(0, 0%, 98%);
     --color-one:hsl(192, 100%, 67%);
     --color-two:hsl(220, 98%, 61%);
-    --footer-menu-text-hover:hsl(220, 98%, 61%);
+    --footer-menu-text-hover:hsl(236, 9%, 61%);
     --Light-Gray: hsl(233, 11%, 84%);
     --very-light-gray: hsl(236, 9%, 61%);
     --card-border:hsl(236, 9%, 61%, .2);
     --completed-task-text:hsl(233, 11%, 84%);
     --theme-radio-button: hsl(0, 0%, 98%);
     --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
-
+    --footer-menu-text-active: hsl(220, 98%, 61%);
+    --footer-menu-text: hsl(236, 9%, 61%, .7);
 }
 
 .dark {
@@ -34,10 +35,11 @@
     --theme-card-color: hsl(234, 39%, 85%);
     --color-one:var(--color-one);
     --color-two:var(--color-two);
-    --footer-menu-text-hover:hsl(220, 98%, 61%);
+    --footer-menu-text-hover:hsl(234, 39%, 85%);
     --card-border:hsl(233, 11%, 84%, .1);
     --completed-task-text:hsla(0, 0%, 93%, .2);
     --theme-radio-button: hsl(0, 0%, 98%);
     --Light-Grayish-Blue: hsl(234, 39%, 85%);
-
+    --footer-menu-text-active: hsl(220, 98%, 61%);
+    --footer-menu-text: hsl(236, 9%, 61%, .5);
 }
