@@ -266,3 +266,9 @@ input:focus{
     width: 90%;
   }
 }
+
+@media screen and (min-width: 1440px){
+  .App{
+    background-size: 100% auto;
+  }
+}
